@@ -2,57 +2,33 @@
 
 Real-time 3D asset preparation and technical art portfolio.
 
-> **Portfolio note:** The examples in this repository are self-initiated technical demonstrations created to show the workflow and quality checks relevant to real-time 3D asset delivery. They are not presented as previous client work.
+> The examples in this repository are self-initiated technical demonstrations. They are not presented as previous client work.
 
-## Focus
+## Featured technical areas
 
-- Blender-based 3D asset preparation
-- glTF / GLB delivery for real-time and web workflows
-- PBR material setup and consistency
-- UV inspection and cleanup
+- Blender asset preparation
+- glTF / GLB delivery
+- PBR materials and UV inspection
 - Geometry and shading validation
-- Transform, origin, pivot and orientation checks
+- Transform, origin and pivot checks
 - Asset hierarchy and naming
-- Lightweight Python automation for repeatable validation
-- Web-ready asset preparation for Three.js, Babylon.js and model-viewer workflows
+- Python automation for repeatable validation
+- Web-ready asset preparation
 
-## Technical workflow
+## Repository map
 
-```text
-Blender source
-   ↓
-Geometry / normals / shading checks
-   ↓
-UV and PBR material checks
-   ↓
-Transforms / origins / hierarchy
-   ↓
-glTF / GLB export
-   ↓
-Automated validation
-   ↓
-Web / real-time delivery
-```
+- portfolio.md — concise technical portfolio overview
+- docs/workflow.md — end-to-end workflow
+- docs/quality-checklist.md — delivery checklist
+- tools/validate_gltf.py — basic GLB container validation
+- tools/inspect_gltf.py — dependency-free glTF inspection
 
-## Repository structure
+## Workflow
 
-```text
-.
-├── README.md
-├── docs/
-│   └── workflow.md
-└── tools/
-    └── validate_gltf.py
-```
+Blender source → geometry/shading → UV/PBR → transforms/hierarchy → glTF/GLB export → automated checks → browser/runtime test.
 
-## Validation philosophy
+## Accuracy statement
 
-The goal is not only to produce a visually correct model, but to make the delivered asset predictable in a real-time pipeline. Validation therefore focuses on structural issues that can cause problems after export: invalid files, unexpected transforms, missing metadata, inconsistent materials, and other delivery-side issues.
-
-## Demonstration status
-
-This repository is being built as a focused technical portfolio. Additional sample assets, screenshots, Blender source files and automation examples will be added as they are prepared and verified.
-
-## Contact
+This repository demonstrates technical capability through self-initiated work and does not invent client history or previous paid projects.
 
 GitHub: https://github.com/khandetube
