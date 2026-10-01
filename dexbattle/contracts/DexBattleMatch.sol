@@ -42,14 +42,24 @@ contract DexBattleMatch {
 
     /// @dev Production systems should authorize settlement through a robust,
     /// independently reviewed game-result/oracle mechanism.
+    mapping(address => uint256) public credits;
+
     function settle(uint256 id, address winner) external {
         MatchInfo storage m = matches[id];
         require(m.state == State.Active, "not active");
         require(winner == m.creator || winner == m.opponent, "invalid winner");
         m.winner = winner;
         m.state = State.Settled;
+        uint256 pot = m.stake * 2;
+        credits[winner] += pot;
         emit MatchSettled(id, winner);
-        (bool ok,) = winner.call{value: address(this).balance >= m.stake * 2 ? m.stake * 2 : address(this).balance}("");
-        require(ok, "payout failed");
+    }
+
+    function withdraw() external {
+        uint256 amount = credits[msg.sender];
+        require(amount > 0, "nothing to withdraw");
+        credits[msg.sender] = 0;
+        (bool ok,) = msg.sender.call{value: amount}("");
+        require(ok, "withdraw failed");
     }
 }
