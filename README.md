@@ -32,3 +32,12 @@ Blender source → geometry/shading → UV/PBR → transforms/hierarchy → glTF
 This repository demonstrates technical capability through self-initiated work and does not invent client history or previous paid projects.
 
 GitHub: https://github.com/khandetube
+
+
+## Featured Web3 Project
+
+### DexBattle Arena — Web3 Game Developer Case Study
+A self-initiated Web3 game prototype covering wallet UX, match state, Ethereum-oriented transaction flows and a Solidity escrow reference contract.
+
+- [Open the DexBattle case study](./dexbattle/)
+- [Read the DexBattle technical README](./dexbattle/README.md)
